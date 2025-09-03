@@ -2,12 +2,8 @@ package ui
 
 import (
 	"image/color"
-	"io"
-	"os"
-	"path/filepath"
 
 	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/storage"
 	"fyne.io/fyne/v2/theme"
 )
 
@@ -25,38 +21,8 @@ func NewChineseTheme() fyne.Theme {
 
 // Font 返回字体资源
 func (t *ChineseTheme) Font(style fyne.TextStyle) fyne.Resource {
-	// 尝试加载系统中文字体
-	fontPaths := []string{
-		"C:/Windows/Fonts/msyh.ttc",   // 微软雅黑
-		"C:/Windows/Fonts/simsun.ttc", // 宋体
-		"C:/Windows/Fonts/simhei.ttf", // 黑体
-		"C:/Windows/Fonts/arial.ttf",  // Arial (fallback)
-	}
-
-	for _, fontPath := range fontPaths {
-		if _, err := os.Stat(fontPath); err == nil {
-			if fontResource := loadFontResource(fontPath); fontResource != nil {
-				return fontResource
-			}
-		}
-	}
-
-	// 如果都找不到，使用默认字体
-	return theme.DefaultTheme().Font(style)
-}
-
-// loadFontResource 加载字体资源
-func loadFontResource(fontPath string) fyne.Resource {
-	// 尝试从文件系统加载字体
-	if uri := storage.NewFileURI(fontPath); uri != nil {
-		if reader, err := storage.Reader(uri); err == nil {
-			defer reader.Close()
-			if data, err := io.ReadAll(reader); err == nil && len(data) > 0 {
-				return fyne.NewStaticResource(filepath.Base(fontPath), data)
-			}
-		}
-	}
-	return nil
+	// 使用打包的中文字体资源
+	return resourceSimheiTtf
 }
 
 // Size 返回尺寸

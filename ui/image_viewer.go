@@ -11,6 +11,7 @@ import (
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/dialog"
 	"fyne.io/fyne/v2/storage"
+	"fyne.io/fyne/v2/theme"
 	"fyne.io/fyne/v2/widget"
 	"github.com/luoxk/wzlib"
 )
@@ -56,9 +57,12 @@ func (iv *ImageViewer) createContent() {
 	iv.zoomSlider.OnChanged = iv.onZoomChanged
 
 	// 控制按钮
-	iv.saveButton = widget.NewButton("Save Image", iv.saveImage)
-	iv.resetButton = widget.NewButton("Reset Zoom", iv.resetZoom)
+	iv.saveButton = widget.NewButtonWithIcon("💾 保存图像", theme.DocumentSaveIcon(), iv.saveImage)
+	iv.saveButton.Importance = widget.HighImportance
 	iv.saveButton.Disable()
+
+	iv.resetButton = widget.NewButtonWithIcon("🔄 重置缩放", theme.ViewRefreshIcon(), iv.resetZoom)
+	iv.resetButton.Importance = widget.MediumImportance
 
 	// 控制面板
 	controlPanel := container.NewVBox(
