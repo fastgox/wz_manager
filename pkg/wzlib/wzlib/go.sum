@@ -1,0 +1,10 @@
+github.com/fastgox/utils v0.0.1 h1:CHYdCOz2KLJrZ/oQhPMGnZS+gb/Uvzcd7YyijefHUjA=
+github.com/fastgox/utils v0.0.1/go.mod h1:1FTYUVbsstu2ig07OkJKIAPOWM/P/Z7Ks3TUZXIIUpw=
+github.com/fastgox/utils/logger v0.0.0-20250816153919-a87da17c3389 h1:5fBhGlHH3du7Hdrby9Cl04/VY8sN+ktP8muMGjaGs+Q=
+github.com/fastgox/utils/logger v0.0.0-20250816153919-a87da17c3389/go.mod h1:ypg56CcFrtCBbJgM2WrV8C9Kc0oRN+6wMPfDiuv+ZJ4=
+golang.org/x/text v0.21.0 h1:zyQAAkrwaneQ066sspRyJaG9VNi/YJ1NfzcGB3hZ/qo=
+golang.org/x/text v0.21.0/go.mod h1:4IBbMaMmOPCJ8SecivzSH54+73PCFmPWxNTLm+vZkEQ=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
+gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
